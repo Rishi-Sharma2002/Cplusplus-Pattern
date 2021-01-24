@@ -79,10 +79,46 @@ void hollow_inverted_half_pyramid()
         cout<<endl;
     }
 }
+void Pyramid()
+{
+    int n;
+    cout<< "\nEnter the size:- ";
+    cin>>n;
+
+    for (int i =1, k=0; i<=n; i++, k=0)
+    {
+        for (int j =n-i; j>0; j--)
+            cout<<" ";
+        while(k!=2*i-1)
+        {
+            cout<<"*";
+            k++;
+        }
+        cout<<endl;
+    }
+
+}
+void inverted_full_pyramid()
+{
+    int n;
+    cout<< "\nEnter the size:- ";
+    cin>>n;
+    for (int i = 1, k=n-1; i <=n; i++, k=n-i)
+    {
+        for (int j =0; j <i; j++)
+            cout<<" ";
+        while(k!=2*i-1)
+        {
+            cout<<"*";
+            k--;
+        }
+        cout<<endl;
+    }
+}
 int main()
 {   system("clear");
     int n;
-    cout<<"Enter the choice: - \n1.Solid Rectangle \n2.Hollow Rectangle\n3.Half Pyramid\n4.Inverted half pyramid\n5.Hollow inverted half pyramid";
+    cout<<"Enter the choice: - \n1.Solid Rectangle \n2.Hollow Rectangle\n3.Half Pyramid\n4.Inverted half pyramid\n5.Hollow inverted half pyramid\n6.Full Pyramid\n7.Inverted Full Pyramid";
     cout<<"\n\nEnter your choice:- ";
     cin>>n;
 
@@ -101,6 +137,11 @@ int main()
             inverted_half_pyramid();
         case 5:
             hollow_inverted_half_pyramid();
+            break;
+        case 6:
+            Pyramid();
+        case 7:
+            inverted_full_pyramid();
         default:
             break;
     }
